@@ -1,0 +1,8 @@
+
+*
+
+!.gitignore
+!src/
+!src/*
+!Super.qpf
+!stp1.stp
