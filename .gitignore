@@ -4,5 +4,7 @@
 !.gitignore
 !src/
 !src/*
+!.wiki.d/
+!.wiki.d/*
 !Super.qpf
 !stp1.stp
