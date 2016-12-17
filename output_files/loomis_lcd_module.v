@@ -36,6 +36,15 @@ ENTITY LCD_Display IS
 -- Example "A" is row 4 column 1, so hex value is 8'h41"
 -- *see LCD Controller's Datasheet for other graphics characters available
 */
+
+/* Kyle Burge and Prasidh Arora
+ *
+ * This LCD Module has been provided by Dr. John S. Loomis for use in the
+ * Turing Machine Developement Environment. Minor edits were made mostly
+ * to the bit widths of hex0 and hex1 input wires to the LCD_Display_string
+ * module so that we could entire in all of the data for a single line
+ * with one variable update.
+ */ 
         
 module LCD_Display(iCLK_50MHZ, iRST_N, hex1, hex0, 
     LCD_RS,LCD_E,LCD_RW,DATA_BUS);
@@ -84,8 +93,7 @@ always @(posedge iCLK_50MHZ or negedge iRST_N)
        CLK_COUNT_400HZ <= 20'h00000;
        CLK_400HZ <= 1'b0;
     end
-    //else if (CLK_COUNT_400HZ < 20'h0F424)
-	 else if (CLK_COUNT_400HZ < 20'h05000)
+    else if (CLK_COUNT_400HZ < 20'h0F424)
     begin
        CLK_COUNT_400HZ <= CLK_COUNT_400HZ + 1'b1;
     end
